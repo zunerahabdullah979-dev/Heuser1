@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CartoonVerse — Enter the Multiverse</title>
+  <link rel="stylesheet" href="/home/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== Background layers ===== -->
+  <div class="bg-stars" id="starfield"></div>
+  <div class="bg-particles" id="particles"></div>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="/" class="nav-brand">
+      <span class="brand-icon">🌀</span>
+      <span class="brand-text">CARTOON<span class="brand-accent">VERSE</span></span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#worlds" class="nav-link">Worlds</a></li>
+      <li><a href="#character-discovery" class="nav-link">Characters</a></li>
+      <li><a href="/game" class="nav-link">Game</a></li>
+      <li><a href="/portfolio" class="nav-link">Portfolio</a></li>
+      <li><a href="/api#pokemon" class="nav-link">Pokémon Explorer</a></li>
+      <li><a href="/api#tv" class="nav-link">TV Universe</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <p class="hero-tag">✦ WELCOME TO ✦</p>
+      <h1 class="hero-title">
+        ENTER THE<br /><span class="hero-highlight">MULTIVERSE</span>
+      </h1>
+      <p class="hero-subtitle">One portal. Endless cartoon adventures.</p>
+
+      <!-- Central Portal -->
+      <div class="portal-stage">
+        <div class="portal">
+          <div class="ring ring-outer"></div>
+          <div class="ring ring-mid"></div>
+          <div class="ring ring-inner"></div>
+          <div class="ring ring-core-border"></div>
+          <div class="portal-core">
+            <div class="core-flare"></div>
+          </div>
+          <div class="portal-aura"></div>
+          <!-- Orbiting dots -->
+          <div class="orbit orbit-1"><span class="orb"></span></div>
+          <div class="orbit orbit-2"><span class="orb"></span></div>
+          <div class="orbit orbit-3"><span class="orb"></span></div>
+        </div>
+      </div>
+
+      <a href="#worlds" class="cta-btn" id="ctaExplore">
+        <span class="cta-glow"></span>
+        <span class="cta-text">EXPLORE WORLDS</span>
+      </a>
+    </div>
+    <div class="hero-scroll-hint" id="scrollHint">
+      <span class="scroll-arrow"></span>
+    </div>
+  </section>
+
+  <!-- ===== Worlds Section (Exactly 4 Worlds) ===== -->
+  <section class="worlds" id="worlds">
+    <div class="section-header">
+      <span class="section-tag">CHOOSE YOUR DESTINATION</span>
+      <h2 class="section-title">Four Legendary Worlds</h2>
+    </div>
+    <div class="worlds-grid">
+
+      <!-- 1. Doraemon World -->
+      <article class="world-card world-doraemon" id="card-doraemon">
+        <div class="card-bg-glow"></div>
+        <div class="card-top">
+          <div class="card-portal-mini">
+            <div class="mini-orbit mo-1"></div>
+            <div class="mini-orbit mo-2"></div>
+            <div class="mini-core doraemon-gradient"></div>
+          </div>
+          <span class="card-badge">🔵</span>
+        </div>
+        <h3 class="card-title">Doraemon World</h3>
+        <p class="card-desc">Future gadgets, What-If machine simulations & Anywhere Door travels.</p>
+        <a href="#world-doraemon-detail" class="card-btn doraemon-btn">Explore Doraemon</a>
+      </article>
+
+      <!-- 2. Powerpuff Girls World -->
+      <article class="world-card world-powerpuff" id="card-powerpuff">
+        <div class="card-bg-glow"></div>
+        <div class="card-top">
+          <div class="card-portal-mini">
+            <div class="mini-orbit mo-1"></div>
+            <div class="mini-orbit mo-2"></div>
+            <div class="mini-core powerpuff-gradient"></div>
+          </div>
+          <span class="card-badge">💖</span>
+        </div>
+        <h3 class="card-title">Powerpuff Girls World</h3>
+        <p class="card-desc">Villain dossiers, Townsville emergency missions & heroine power tests.</p>
+        <a href="#world-powerpuff-detail" class="card-btn powerpuff-btn">Explore Powerpuff Girls</a>
+      </article>
+
+      <!-- 3. Pokémon World -->
+      <article class="world-card world-pokemon" id="card-pokemon">
+        <div class="card-bg-glow"></div>
+        <div class="card-top">
+          <div class="card-portal-mini">
+            <div class="mini-orbit mo-1"></div>
+            <div class="mini-orbit mo-2"></div>
+            <div class="mini-core pokemon-gradient"></div>
+          </div>
+          <span class="card-badge">⚡</span>
+        </div>
+        <h3 class="card-title">Pokémon World</h3>
+        <p class="card-desc">18 Elemental types, regional Gym Leagues & Live real-time PokéAPI explorer.</p>
+        <a href="#world-pokemon-detail" class="card-btn pokemon-btn">Explore Pokémon</a>
+      </article>
+
+      <!-- 4. Tom and Jerry World -->
+      <article class="world-card world-tomjerry" id="card-tomjerry">
+        <div class="card-bg-glow"></div>
+        <div class="card-top">
+          <div class="card-portal-mini">
+            <div class="mini-orbit mo-1"></div>
+            <div class="mini-orbit mo-2"></div>
+            <div class="mini-core tomjerry-gradient"></div>
+          </div>
+          <span class="card-badge">🧀</span>
+        </div>
+        <h3 class="card-title">Tom & Jerry World</h3>
+        <p class="card-desc">Interactive Prank Lab, playable Chase Challenge mini-game & character files.</p>
+        <a href="#world-tomjerry-detail" class="card-btn tomjerry-btn">Explore Tom & Jerry</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== Character Discovery, Search & Filters Section ===== -->
+  <section class="character-discovery" id="character-discovery">
+    <div class="section-header">
+      <span class="section-tag">MEET THE HEROES & RIVALS</span>
+      <h2 class="section-title">Character Multiverse Discovery</h2>
+    </div>
+
+    <div class="discovery-controls">
+      <!-- Search Bar -->
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="charSearch" placeholder="Search by name, world, or superpower..." aria-label="Search characters" />
+        <button id="clearSearchBtn" class="clear-search-btn" title="Clear search" aria-label="Clear search">✕</button>
+      </div>
+
+      <!-- World Filters -->
+      <div class="filter-pills" id="worldFilters">
+        <button class="filter-pill active" data-filter="all">All Worlds</button>
+        <button class="filter-pill pill-doraemon" data-filter="doraemon">Doraemon</button>
+        <button class="filter-pill pill-powerpuff" data-filter="powerpuff">Powerpuff Girls</button>
+        <button class="filter-pill pill-pokemon" data-filter="pokemon">Pokémon</button>
+        <button class="filter-pill pill-tomjerry" data-filter="tomjerry">Tom & Jerry</button>
+      </div>
+
+      <!-- Random Discovery Action -->
+      <div class="random-action">
+        <button class="random-btn" id="btnRandomChar">
+          <span class="btn-dice">🎲</span> Discover Random Character
+        </button>
+      </div>
+    </div>
+
+    <!-- Random Character Spotlight Box -->
+    <div class="spotlight-card hidden" id="spotlightCard">
+      <div class="spotlight-badge" id="spotlightBadge">✨ SPOTLIGHT DISCOVERY</div>
+      <div class="spotlight-content">
+        <div class="spotlight-avatar" id="spotlightIcon">🌟</div>
+        <div class="spotlight-info">
+          <span class="spotlight-world" id="spotlightWorld">Doraemon World</span>
+          <h3 class="spotlight-name" id="spotlightName">Doraemon</h3>
+          <p class="spotlight-desc" id="spotlightDesc">The 22nd-century robotic cat equipped with a fourth-dimensional pocket full of fantastical gadgets.</p>
+          <div class="spotlight-traits" id="spotlightTraits">
+            <span class="trait">Anywhere Door</span>
+            <span class="trait">Take-copter</span>
+            <span class="trait">Dorayaki Lover</span>
+          </div>
+        </div>
+      </div>
+      <button class="spotlight-close" id="spotlightClose" aria-label="Close spotlight">✕</button>
+    </div>
+
+    <!-- Characters Grid -->
+    <div class="character-grid" id="characterGrid">
+
+      <!-- DORAEMON WORLD CHARACTERS -->
+      <div class="char-card" data-world="doraemon" data-name="doraemon" data-tags="robotic cat 22nd century gadgets anywhere door pocket future">
+        <div class="char-icon doraemon-bg">🐱</div>
+        <div class="char-tag doraemon-tag">Doraemon</div>
+        <h4 class="char-name">Doraemon</h4>
+        <p class="char-role">Robotic Cat from the 22nd Century</p>
+        <p class="char-desc">Sent back in time to guide Nobita, equipped with a 4D pocket carrying over 4,500 secret gadgets.</p>
+        <div class="char-badges">
+          <span class="badge">Gadget Master</span>
+          <span class="badge">Dorayaki Fan</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-world="doraemon" data-name="nobita" data-tags="nobita nobi student marksman kind heart dreamer sleepy">
+        <div class="char-icon doraemon-bg">👓</div>
+        <div class="char-tag doraemon-tag">Doraemon</div>
+        <h4 class="char-name">Nobita Nobi</h4>
+        <p class="char-role">Unlikely Hero & Expert Marksman</p>
+        <p class="char-desc">Clumsy yet deeply compassionate, Nobita has an unmatched genius for string figures and instant sleep.</p>
+        <div class="char-badges">
+          <span class="badge">Big Heart</span>
+          <span class="badge">Sharpshooter</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-world="doraemon" data-name="shizuka" data-tags="shizuka minamoto violin sweet smart friend">
+        <div class="char-icon doraemon-bg">🌸</div>
+        <div class="char-tag doraemon-tag">Doraemon</div>
+        <h4 class="char-name">Shizuka Minamoto</h4>
+        <p class="char-role">The Voice of Reason & Kindness</p>
+        <p class="char-desc">Intelligent, caring and athletic friend who loves baked sweet potatoes and plays the violin passionately.</p>
+        <div class="char-badges">
+          <span class="badge">Kind-Hearted</span>
+          <span class="badge">Brave Ally</span>
+        </div>
+      </div>
+
+      <!-- POWERPUFF GIRLS WORLD CHARACTERS -->
+      <div class="char-card" data-world="powerpuff" data-name="blossom" data-tags="blossom commander leader pink ice breath brain townsville superhero">
+        <div class="char-icon blossom-bg">🎀</div>
+        <div class="char-tag blossom-tag">Powerpuff Girls</div>
+        <h4 class="char-name">Blossom</h4>
+        <p class="char-role">Commander & The Leader</p>
+        <p class="char-desc">Everything Nice! Blossom is the tactical genius of the trio, possessing unique cryokinetic Ice Breath.</p>
+        <div class="char-badges">
+          <span class="badge">Ice Breath</span>
+          <span class="badge">Tactical Genius</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-world="powerpuff" data-name="bubbles" data-tags="bubbles sugar joy laughter blue sonic scream animal language superhero">
+        <div class="char-icon bubbles-bg">🫧</div>
+        <div class="char-tag bubbles-tag">Powerpuff Girls</div>
+        <h4 class="char-name">Bubbles</h4>
+        <p class="char-role">The Joy & The Laughter</p>
+        <p class="char-desc">Sugar-sweet and kind-hearted, Bubbles can speak any animal language and release supersonic sonic screams.</p>
+        <div class="char-badges">
+          <span class="badge">Sonic Scream</span>
+          <span class="badge">Speaks Animal</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-world="powerpuff" data-name="buttercup" data-tags="buttercup spice fighter green brawler tough powerhouse superhero">
+        <div class="char-icon buttercup-bg">🥊</div>
+        <div class="char-tag buttercup-tag">Powerpuff Girls</div>
+        <h4 class="char-name">Buttercup</h4>
+        <p class="char-role">The Toughest Fighter</p>
+        <p class="char-desc">Pure Spice! Buttercup is fearless and relentless, always ready to punch first and ask questions later.</p>
+        <div class="char-badges">
+          <span class="badge">Super Strength</span>
+          <span class="badge">Fearless</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-world="powerpuff" data-name="mojo jojo" data-tags="mojo jojo villain chimp mastermind professor utonium townsville chemical x">
+        <div class="char-icon mojojojo-bg">🧠</div>
+        <div class="char-tag mojojojo-tag">Powerpuff Girls</div>
+        <h4 class="char-name">Mojo Jojo</h4>
+        <p class="char-role">The Simian Super-Genius Nemesis</p>
+        <p class="char-desc">Enhanced with massive intellect by Chemical X, Mojo crafts elaborate contraptions to conquer Townsville.</p>
+        <div class="char-badges">
+          <span class="badge">Giant Brain</span>
+          <span class="badge">Robotics Expert</span>
+        </div>
+      </div>
+
+      <!-- POKÉMON WORLD CHARACTERS -->
+      <div class="char-card" data-world="pokemon" data-name="pikachu" data-tags="pikachu electric mouse thunderbolt ash kanto mascot pokemon">
+        <div class="char-icon pikachu-bg">⚡</div>
+        <div class="char-tag pokemon-tag">Pokémon</div>
+        <h4 class="char-name">Pikachu</h4>
+        <p class="char-role">Electric Mouse Pokémon</p>
+        <p class="char-desc">Stores electricity in its red cheek pouches, unleashing devastating 100,000-volt Thunderbolt blasts.</p>
+        <div class="char-badges">
+          <span class="badge">Electric-Type</span>
+          <span class="badge">Static Ability</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-world="pokemon" data-name="charizard" data-tags="charizard fire flying dragon flamethrower blaze pokemon">
+        <div class="char-icon charizard-bg">🔥</div>
+        <div class="char-tag pokemon-tag">Pokémon</div>
+        <h4 class="char-name">Charizard</h4>
+        <p class="char-role">Flame & Flying Pokémon</p>
+        <p class="char-desc">Flies in search of powerful opponents, breathing white-hot fire hot enough to melt boulders.</p>
+        <div class="char-badges">
+          <span class="badge">Fire / Flying</span>
+          <span class="badge">Blaze Power</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-world="pokemon" data-name="lucario" data-tags="lucario aura fighting steel aura sphere sinnoh pokemon">
+        <div class="char-icon lucario-bg">🐺</div>
+        <div class="char-tag pokemon-tag">Pokémon</div>
+        <h4 class="char-name">Lucario</h4>
+        <p class="char-role">Aura & Fighting Pokémon</p>
+        <p class="char-desc">Reads the spiritual aura waves of living beings, concentrating raw energy into an inescapable Aura Sphere.</p>
+        <div class="char-badges">
+          <span class="badge">Fighting / Steel</span>
+          <span class="badge">Aura Sensor</span>
+        </div>
+      </div>
+
+      <!-- TOM & JERRY WORLD CHARACTERS -->
+      <div class="char-card" data-world="tomjerry" data-name="tom" data-tags="tom cat thomas housecat pianist slapstick mouse trap mgm">
+        <div class="char-icon tom-bg">🐱</div>
+        <div class="char-tag tomjerry-tag">Tom & Jerry</div>
+        <h4 class="char-name">Tom Cat</h4>
+        <p class="char-role">The Tenacious Household Cat</p>
+        <p class="char-desc">Endlessly resourceful and surprisingly talented at classical piano, Tom's traps always result in comedy gold.</p>
+        <div class="char-badges">
+          <span class="badge">Master Pianist</span>
+          <span class="badge">Iron Will</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-world="tomjerry" data-name="jerry" data-tags="jerry mouse cheese trickster clever hole slapstick">
+        <div class="char-icon jerry-bg">🐭</div>
+        <div class="char-tag tomjerry-tag">Tom & Jerry</div>
+        <h4 class="char-name">Jerry Mouse</h4>
+        <p class="char-role">The Quick-Witted Trickster</p>
+        <p class="char-desc">Small in stature but colossal in wit, Jerry outsmarts every predator with clever tools and pure agility.</p>
+        <div class="char-badges">
+          <span class="badge">Speed Demon</span>
+          <span class="badge">Cheese Connoisseur</span>
+        </div>
+      </div>
+
+      <div class="char-card" data-world="tomjerry" data-name="spike" data-tags="spike bulldog dog tyke bone guard house slapstick">
+        <div class="char-icon spike-bg">🐶</div>
+        <div class="char-tag tomjerry-tag">Tom & Jerry</div>
+        <h4 class="char-name">Spike the Bulldog</h4>
+        <p class="char-role">The Neighbourhood Enforcer & Loving Dad</p>
+        <p class="char-desc">A formidable British bulldog who loves peace, quiet, and his son Tyke — warning Tom never to disturb their nap.</p>
+        <div class="char-badges">
+          <span class="badge">Heavyweight Brawler</span>
+          <span class="badge">Devoted Father</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty State Message -->
+    <div class="no-results hidden" id="noResultsMsg">
+      <span class="no-results-icon">🔎</span>
+      <h3>No Characters Found</h3>
+      <p>Try searching for a different name, superpower, or switch your world filter.</p>
+      <button class="reset-filter-btn" id="resetFilterBtn">Show All Characters</button>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       WORLD 1: DORAEMON — FUTURE GADGET LAB (Interactive 3 Tabs)
+       =================================================================== -->
+  <section class="world-detail detail-doraemon" id="world-doraemon-detail">
+    <div class="detail-inner">
+      <div class="detail-header">
+        <span class="detail-icon">🔵</span>
+        <h2 class="detail-title doraemon-text">Doraemon — Future Gadget Lab</h2>
+      </div>
+      <p class="detail-intro">Welcome to the 22nd-century laboratory! Explore secret pocket inventions, test the What-If simulation machine, or step through the Anywhere Door.</p>
+
+      <!-- Doraemon Tab Navigation -->
+      <div class="world-tabs" data-world-tabs="doraemon">
+        <button class="tab-btn active" data-tab="doraemon-tab-1">
+          <span class="tab-icon">🎒</span> Gadget Explorer
+        </button>
+        <button class="tab-btn" data-tab="doraemon-tab-2">
+          <span class="tab-icon">🔮</span> What-If Machine
+        </button>
+        <button class="tab-btn" data-tab="doraemon-tab-3">
+          <span class="tab-icon">🚪</span> Anywhere Door
+        </button>
+      </div>
+
+      <!-- TAB 1: Gadget Explorer -->
+      <div class="tab-pane active" id="doraemon-tab-1">
+        <div class="tab-action-bar">
+          <p class="tab-hint">Click any futuristic gadget to inspect its blueprint and secret capabilities.</p>
+          <button class="action-btn-sm" id="btnSurpriseGadget">
+            <span>🎁</span> Surprise Gadget
+          </button>
+        </div>
+
+        <div class="gadget-grid" id="gadgetGrid">
+          <!-- Populated by JS / HTML Cards -->
+        </div>
+
+        <!-- Detailed Modal for Gadget -->
+        <div class="interactive-modal hidden" id="gadgetModal">
+          <div class="modal-card">
+            <button class="modal-close-btn" id="gadgetModalClose">✕</button>
+            <div class="modal-header">
+              <span class="modal-avatar" id="gadgetModalIcon">🚪</span>
+              <div>
+                <span class="modal-tag">22nd-Century Secret Gadget</span>
+                <h3 class="modal-title" id="gadgetModalTitle">Anywhere Door</h3>
+              </div>
+            </div>
+            <p class="modal-desc" id="gadgetModalDesc"></p>
+            <div class="modal-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Range</span>
+                <span class="meta-val" id="gadgetModalRange">10 Light Years</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Inventor</span>
+                <span class="meta-val">Matsushiba Robotics</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Usage Rule</span>
+                <span class="meta-val" id="gadgetModalRule">Clear visualization required</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <span class="modal-fun-fact" id="gadgetModalFact">💡 Fun Fact: The Anywhere Door cannot teleport to destinations that have no spatial map stored in its memory bank.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: What If Machine -->
+      <div class="tab-pane" id="doraemon-tab-2">
+        <div class="what-if-container">
+          <div class="what-if-header">
+            <span class="wi-avatar">🔮</span>
+            <h3>The "What If" Problem Solver</h3>
+            <p>Select an everyday real-world dilemma and watch the 22nd-century What-If telephone booth compute the ultimate gadget rescue!</p>
+          </div>
+
+          <div class="problem-selector">
+            <label for="problemSelect">Choose a Dilemma:</label>
+            <div class="select-row">
+              <select id="problemSelect" aria-label="Select dilemma">
+                <option value="late-school">⏰ Overslept! School starts in 3 minutes!</option>
+                <option value="forgot-homework">📝 Dog ate (or forgot) homework at home</option>
+                <option value="rainy-picnic">🌧️ Heavy thunderstorms ruined Sunday outdoor picnic</option>
+                <option value="bully-gian">💪 Local neighbourhood giant wants to wrestle</option>
+                <option value="messy-room">🧹 Bedroom looks like a tornado disaster zone</option>
+                <option value="animal-talk">🐕 Want to understand what the family dog is barking about</option>
+                <option value="bored-weekend">🏝️ Stuck inside with nothing fun to do on weekend</option>
+              </select>
+              <button class="action-btn-sm" id="btnRandomProblem">
+                <span>🎲</span> Random Dilemma
+              </button>
+            </div>
+          </div>
+
+          <!-- Solution Display Card -->
+          <div class="solution-card" id="solutionCard">
+            <div class="sol-gadget-icon" id="solIcon">🚪</div>
+            <div class="sol-info">
+              <span class="sol-tag">Recommended Gadget Solution</span>
+              <h4 class="sol-gadget-name" id="solName">The Anywhere Door</h4>
+              <p class="sol-how" id="solHow">Step through the pink door straight from your bedside to your classroom chair without Nobita tripping over!</p>
+              <div class="sol-outcome" id="solOutcome">
+                <strong>Result:</strong> Arrived with 2 minutes to spare, perfect attendance preserved!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Anywhere Door Destination Explorer -->
+      <div class="tab-pane" id="doraemon-tab-3">
+        <div class="door-explorer">
+          <div class="door-controls">
+            <p>Where in space, time, or imagination would you like to travel today?</p>
+            <button class="action-btn-sm" id="btnRandomDestination">
+              <span>🚀</span> Random Destination
+            </button>
+          </div>
+
+          <div class="destination-pills" id="destPills">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="destination-display" id="destDisplay">
+            <div class="dest-portal-frame">
+              <div class="dest-bg-preview" id="destBg"></div>
+              <div class="dest-portal-door">
+                <span class="door-handle"></span>
+              </div>
+            </div>
+            <div class="dest-info-card">
+              <span class="dest-coord" id="destCoord">Coordinates: Luna Basin Sector 4</span>
+              <h3 class="dest-name" id="destName">The Moon Rabbit Kingdom</h3>
+              <p class="dest-desc" id="destDesc">Travel to the far side of the moon where mochi-pounding lunar rabbits have constructed an invisible bio-dome filled with anti-gravity jumps.</p>
+              <div class="dest-fact-box" id="destFact">
+                <strong>💡 Cosmic Lore:</strong> Nobita used the Badge of Trust so he and his friends could breathe on the lunar surface without spacesuits!
+              </div>
+              <button class="teleport-btn" id="btnTeleport">
+                <span>✨</span> Step Through The Door
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#worlds" class="back-link">← Back to All Worlds</a>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       WORLD 2: POWERPUFF GIRLS — TOWNSVILLE HQ (Interactive 3 Tabs)
+       =================================================================== -->
+  <section class="world-detail detail-powerpuff" id="world-powerpuff-detail">
+    <div class="detail-inner">
+      <div class="detail-header">
+        <span class="detail-icon">💖</span>
+        <h2 class="detail-title powerpuff-text">Powerpuff Girls — Townsville HQ</h2>
+      </div>
+      <p class="detail-intro">The hotline is flashing red! Access the villain security archives, take command of Townsville emergency missions, or take the heroine power alignment test.</p>
+
+      <!-- PPG Tab Navigation -->
+      <div class="world-tabs" data-world-tabs="powerpuff">
+        <button class="tab-btn active" data-tab="ppg-tab-1">
+          <span class="tab-icon">🦹</span> Villain Database
+        </button>
+        <button class="tab-btn" data-tab="ppg-tab-2">
+          <span class="tab-icon">🚨</span> Mission Control
+        </button>
+        <button class="tab-btn" data-tab="ppg-tab-3">
+          <span class="tab-icon">⚡</span> Power Test
+        </button>
+      </div>
+
+      <!-- TAB 1: Villain Database -->
+      <div class="tab-pane active" id="ppg-tab-1">
+        <div class="tab-action-bar">
+          <p class="tab-hint">Townsville Police Department Top Security Dossiers. Click any rogue to inspect criminal records.</p>
+          <button class="action-btn-sm" id="btnRandomVillain">
+            <span>🎲</span> Discover Villain
+          </button>
+        </div>
+
+        <div class="villain-grid" id="villainGrid">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Villain Modal -->
+        <div class="interactive-modal hidden" id="villainModal">
+          <div class="modal-card ppg-modal-card">
+            <button class="modal-close-btn" id="villainModalClose">✕</button>
+            <div class="modal-header">
+              <span class="modal-avatar" id="villainModalIcon">🧠</span>
+              <div>
+                <span class="modal-tag danger-tag" id="villainThreat">Threat Level: OMEGA</span>
+                <h3 class="modal-title" id="villainModalName">Mojo Jojo</h3>
+              </div>
+            </div>
+            <p class="modal-desc" id="villainModalDesc"></p>
+            <div class="modal-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Primary Ability</span>
+                <span class="meta-val" id="villainModalPower">Super-Genius Intellect</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Hideout</span>
+                <span class="meta-val" id="villainModalHideout">Volcano Observatory</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Weakness</span>
+                <span class="meta-val" id="villainModalWeakness">Over-explaining schemes</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <span class="modal-fun-fact" id="villainModalQuote">"I am Mojo Jojo! You must listen to the words that are spoken by me!"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Mission Control Mini-Adventure -->
+      <div class="tab-pane" id="ppg-tab-2">
+        <div class="mission-control-box">
+          <div class="hotline-phone">
+            <div class="phone-receiver">☎️</div>
+            <div class="hotline-status">
+              <span class="status-indicator blink"></span>
+              <strong>MAYOR'S EMERGENCY HOTLINE: ACTIVE ALERT</strong>
+            </div>
+          </div>
+
+          <div class="mission-stage" id="missionStage">
+            <div class="mission-header">
+              <span class="mission-badge" id="missionIdTag">MISSION 1 / 3</span>
+              <h3 class="mission-title" id="missionTitle">Mojo Jojo's Giant Mech Downtown</h3>
+            </div>
+            <p class="mission-brief" id="missionBrief">Mojo Jojo is marching a 100-foot robot down Townsville Main Street, aiming a laser at the pickle factory! The citizens need immediate evacuation and response.</p>
+
+            <div class="mission-choices" id="missionChoices">
+              <!-- Choices rendered by JS -->
+            </div>
+
+            <div class="mission-result hidden" id="missionResult">
+              <div class="result-icon" id="resIcon">🎉</div>
+              <h4 id="resTitle">Mission Accomplished!</h4>
+              <p id="resDesc"></p>
+              <div class="res-score" id="resScore">Townsville Safety Rating: 100%</div>
+              <button class="action-btn-sm" id="btnNextMission">Next Mission →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Power Test Interactive Quiz -->
+      <div class="tab-pane" id="ppg-tab-3">
+        <div class="quiz-container" id="quizContainer">
+          <div class="quiz-intro" id="quizIntro">
+            <span class="quiz-avatar">💖</span>
+            <h3>Which Powerpuff Girl Are You?</h3>
+            <p>Answer 4 fun questions to find your chemical match: Blossom (The Leader), Bubbles (The Joy), or Buttercup (The Fighter)!</p>
+            <button class="action-btn" id="btnStartQuiz">Start Power Test</button>
+          </div>
+
+          <div class="quiz-question-box hidden" id="quizQuestionBox">
+            <div class="quiz-progress-bar">
+              <div class="quiz-progress-fill" id="quizProgressFill"></div>
+            </div>
+            <span class="quiz-q-num" id="quizQNum">Question 1 of 4</span>
+            <h4 class="quiz-question-text" id="quizQText">When faced with a giant monster, what is your first instinct?</h4>
+            <div class="quiz-options" id="quizOptions">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <div class="quiz-result-box hidden" id="quizResultBox">
+            <div class="quiz-result-avatar" id="quizResAvatar">🎀</div>
+            <span class="quiz-result-tag" id="quizResTag">YOUR HEROINE MATCH</span>
+            <h3 class="quiz-result-name" id="quizResName">You are BLOSSOM!</h3>
+            <p class="quiz-result-desc" id="quizResDesc">You are the natural leader — intelligent, organized, responsible, and equipped with analytical problem solving. When things get heated, you stay cool with Ice Breath!</p>
+            <div class="quiz-traits-row" id="quizResTraits">
+              <span class="trait">Tactical Mind</span>
+              <span class="trait">Ice Breath</span>
+              <span class="trait">Bow Enthusiast</span>
+            </div>
+            <button class="action-btn-sm" id="btnRetakeQuiz" style="margin-top: 1.5rem;">
+              <span>🔄</span> Retake Power Test
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <a href="#worlds" class="back-link">← Back to All Worlds</a>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       WORLD 3: POKÉMON — POKÉMON DISCOVERY CENTER (Interactive 3 Tabs)
+       =================================================================== -->
+  <section class="world-detail detail-pokemon" id="world-pokemon-detail">
+    <div class="detail-inner">
+      <div class="detail-header">
+        <span class="detail-icon">⚡</span>
+        <h2 class="detail-title pokemon-text">Pokémon — Discovery Center</h2>
+      </div>
+      <p class="detail-intro">Welcome trainers! Explore all 18 elemental affinities, inspect regional gym leader rosters, or query live creature stats directly via PokéAPI.</p>
+
+      <!-- Pokemon Tab Navigation -->
+      <div class="world-tabs" data-world-tabs="pokemon">
+        <button class="tab-btn active" data-tab="poke-tab-1">
+          <span class="tab-icon">🔥</span> Elemental Types (18)
+        </button>
+        <button class="tab-btn" data-tab="poke-tab-2">
+          <span class="tab-icon">🏆</span> Gyms & Leagues
+        </button>
+        <button class="tab-btn" data-tab="poke-tab-3">
+          <span class="tab-icon">📡</span> Live Poké-Data (API)
+        </button>
+      </div>
+
+      <!-- TAB 1: Elemental Type Explorer (18 Types) -->
+      <div class="tab-pane active" id="poke-tab-1">
+        <div class="tab-action-bar">
+          <p class="tab-hint">Inspect all 18 elemental types. Click any card to inspect weaknesses, resistances and notable Pokémon.</p>
+          <button class="action-btn-sm" id="btnRandomType">
+            <span>🎲</span> Discover Type
+          </button>
+        </div>
+
+        <div class="types-grid" id="typesGrid">
+          <!-- 18 Types Rendered by JS -->
+        </div>
+
+        <!-- Type Detail Modal -->
+        <div class="interactive-modal hidden" id="typeModal">
+          <div class="modal-card">
+            <button class="modal-close-btn" id="typeModalClose">✕</button>
+            <div class="modal-header">
+              <span class="modal-avatar" id="typeModalIcon">🔥</span>
+              <div>
+                <span class="modal-tag" id="typeModalBadge">Elemental Affinity</span>
+                <h3 class="modal-title" id="typeModalTitle">Fire Type</h3>
+              </div>
+            </div>
+            <p class="modal-desc" id="typeModalDesc"></p>
+            <div class="modal-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Super Effective On</span>
+                <span class="meta-val" id="typeModalStrong">Grass, Ice, Bug, Steel</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Weak Against</span>
+                <span class="meta-val" id="typeModalWeak">Water, Ground, Rock</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Iconic Example</span>
+                <span class="meta-val" id="typeModalExample">Charizard, Arcanine</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <span class="modal-fun-fact" id="typeModalFact">🔥 Battle Note: Fire Pokémon cannot be inflicted with the Burn status condition.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Gyms and Leagues -->
+      <div class="tab-pane" id="poke-tab-2">
+        <div class="league-container">
+          <div class="region-selector-bar">
+            <span>Select Region:</span>
+            <div class="region-pills" id="regionPills">
+              <button class="region-pill active" data-region="kanto">Kanto</button>
+              <button class="region-pill" data-region="johto">Johto</button>
+              <button class="region-pill" data-region="hoenn">Hoenn</button>
+              <button class="region-pill" data-region="sinnoh">Sinnoh</button>
+            </div>
+          </div>
+
+          <div class="gym-leaders-grid" id="gymGrid">
+            <!-- Rendered by JS based on region -->
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: LIVE POKÉ-DATA (Real PokéAPI Integration) -->
+      <div class="tab-pane" id="poke-tab-3">
+        <div class="live-pokedex-box">
+          <div class="pokedex-header">
+            <span class="pd-avatar">📡</span>
+            <div>
+              <h3>Live PokéAPI Network</h3>
+              <p>Search over 1,000 real Pokémon from <a href="https://pokeapi.co/" target="_blank" rel="noopener">pokeapi.co</a> with live artwork, real stats, and abilities!</p>
+            </div>
+          </div>
+
+          <div class="pokedex-search-bar">
+            <div class="search-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="pokeApiSearchInput" placeholder="Enter name or Pokédex ID (e.g. gengar, 25, mewtwo)..." aria-label="Search Pokédex" />
+              <button class="action-btn-sm" id="btnSearchPokeApi">Search</button>
+            </div>
+            <button class="action-btn-sm" id="btnRandomPokeApi">
+              <span>🎲</span> Random Pokémon
+            </button>
+          </div>
+
+          <!-- Live Loading State -->
+          <div class="poke-loading hidden" id="pokeLoading">
+            <div class="poke-spinner"></div>
+            <p>Connecting to PokéAPI satellites...</p>
+          </div>
+
+          <!-- Error Message State -->
+          <div class="poke-error hidden" id="pokeError">
+            <span class="error-icon">⚠️</span>
+            <h4 id="pokeErrorTitle">Pokémon Not Found</h4>
+            <p id="pokeErrorMsg">Check your spelling or Pokédex number (e.g., 'pikachu' or '150').</p>
+          </div>
+
+          <!-- Live Display Card -->
+          <div class="pokedex-display-card" id="pokeDisplayCard">
+            <div class="pd-left">
+              <div class="pd-art-frame">
+                <img id="pokeImg" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" loading="lazy" />
+              </div>
+              <span class="pd-id-tag" id="pokeIdTag">#0025</span>
+              <h3 class="pd-name" id="pokeName">Pikachu</h3>
+              <div class="pd-types-row" id="pokeTypesRow">
+                <span class="poke-type-badge type-electric">Electric</span>
+              </div>
+            </div>
+
+            <div class="pd-right">
+              <div class="pd-meta-grid">
+                <div class="meta-stat">
+                  <span class="ms-lbl">Height</span>
+                  <span class="ms-val" id="pokeHeight">0.4 m</span>
+                </div>
+                <div class="meta-stat">
+                  <span class="ms-lbl">Weight</span>
+                  <span class="ms-val" id="pokeWeight">6.0 kg</span>
+                </div>
+                <div class="meta-stat">
+                  <span class="ms-lbl">Abilities</span>
+                  <span class="ms-val" id="pokeAbilities">Static, Lightning Rod</span>
+                </div>
+              </div>
+
+              <!-- Base Stats Progress Bars -->
+              <h4 class="stats-title">Base Stats</h4>
+              <div class="base-stats-list" id="pokeStatsList">
+                <div class="stat-bar-row">
+                  <span class="stat-name">HP</span>
+                  <span class="stat-num" id="statHp">35</span>
+                  <div class="stat-meter"><div class="stat-fill" id="fillHp" style="width: 14%;"></div></div>
+                </div>
+                <div class="stat-bar-row">
+                  <span class="stat-name">Attack</span>
+                  <span class="stat-num" id="statAtk">55</span>
+                  <div class="stat-meter"><div class="stat-fill" id="fillAtk" style="width: 22%;"></div></div>
+                </div>
+                <div class="stat-bar-row">
+                  <span class="stat-name">Defense</span>
+                  <span class="stat-num" id="statDef">40</span>
+                  <div class="stat-meter"><div class="stat-fill" id="fillDef" style="width: 16%;"></div></div>
+                </div>
+                <div class="stat-bar-row">
+                  <span class="stat-name">Sp. Atk</span>
+                  <span class="stat-num" id="statSpAtk">50</span>
+                  <div class="stat-meter"><div class="stat-fill" id="fillSpAtk" style="width: 20%;"></div></div>
+                </div>
+                <div class="stat-bar-row">
+                  <span class="stat-name">Sp. Def</span>
+                  <span class="stat-num" id="statSpDef">50</span>
+                  <div class="stat-meter"><div class="stat-fill" id="fillSpDef" style="width: 20%;"></div></div>
+                </div>
+                <div class="stat-bar-row">
+                  <span class="stat-name">Speed</span>
+                  <span class="stat-num" id="statSpd">90</span>
+                  <div class="stat-meter"><div class="stat-fill" id="fillSpd" style="width: 36%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="#worlds" class="back-link">← Back to All Worlds</a>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       WORLD 4: TOM AND JERRY — THE CHASE ZONE (Interactive 3 Tabs)
+       =================================================================== -->
+  <section class="world-detail detail-tomjerry" id="world-tomjerry-detail">
+    <div class="detail-inner">
+      <div class="detail-header">
+        <span class="detail-icon">🧀</span>
+        <h2 class="detail-title tomjerry-text">Tom & Jerry — The Chase Zone</h2>
+      </div>
+      <p class="detail-intro">Slapstick soundboards, hilarious mouse trap reactions, a multi-stage playable chase game, and top-secret household dossier files.</p>
+
+      <!-- Tom and Jerry Tab Navigation -->
+      <div class="world-tabs" data-world-tabs="tomjerry">
+        <button class="tab-btn active" data-tab="tj-tab-1">
+          <span class="tab-icon">💥</span> Prank Lab
+        </button>
+        <button class="tab-btn" data-tab="tj-tab-2">
+          <span class="tab-icon">🏃</span> Chase Challenge
+        </button>
+        <button class="tab-btn" data-tab="tj-tab-3">
+          <span class="tab-icon">📋</span> Character Files
+        </button>
+      </div>
+
+      <!-- TAB 1: Prank Lab -->
+      <div class="tab-pane active" id="tj-tab-1">
+        <div class="prank-lab-container">
+          <div class="tab-action-bar">
+            <p class="tab-hint">Select a classic cartoon trap setup to trigger unpredictable slapstick reactions!</p>
+            <button class="action-btn-sm" id="btnRandomPrank">
+              <span>🎲</span> Random Prank
+            </button>
+          </div>
+
+          <div class="prank-scenarios-grid" id="prankGrid">
+            <!-- Populated by JS -->
+          </div>
+
+          <!-- Prank Outcome Stage -->
+          <div class="prank-stage" id="prankStage">
+            <div class="comic-bubble" id="comicBubble">CLANG! 💥</div>
+            <div class="prank-visuals">
+              <span class="prank-icon-left" id="prankActorLeft">🐱</span>
+              <span class="prank-vs">VS</span>
+              <span class="prank-icon-right" id="prankActorRight">🐭</span>
+            </div>
+            <h3 class="prank-headline" id="prankHeadline">The Iron Skillet Rebound</h3>
+            <p class="prank-narrative" id="prankNarrative">Tom swings a heavy black frying pan at Jerry, who ducks instantly. The pan ricochets off the kitchen wall and prints Tom's face perfectly into waffle shape!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Chase Challenge Mini-Game -->
+      <div class="tab-pane" id="tj-tab-2">
+        <div class="chase-game-box" id="chaseGameBox">
+          <div class="game-hud">
+            <div class="hud-item">
+              <span class="hud-label">Current Role:</span>
+              <strong id="hudRole">Jerry the Mouse</strong>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">Stage:</span>
+              <strong id="hudStage">1 / 3 — The Living Room</strong>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">Cheese Score:</span>
+              <strong id="hudScore">🧀 0</strong>
+            </div>
+          </div>
+
+          <div class="game-canvas" id="gameCanvas">
+            <div class="game-scene-art" id="gameSceneArt">🛋️ 🧶 🐱 💨 🐭</div>
+            <h3 class="game-stage-title" id="gameStageTitle">Tom has spotted you by the grandfather clock!</h3>
+            <p class="game-stage-desc" id="gameStageDesc">Tom pounces forward with claws out! You need to make a lightning split-second decision.</p>
+
+            <div class="game-choices-grid" id="gameChoicesGrid">
+              <!-- Choices populated by JS -->
+            </div>
+
+            <!-- Game Over / Victory Screen -->
+            <div class="game-ending-box hidden" id="gameEndingBox">
+              <div class="ending-icon" id="endingIcon">🏆</div>
+              <h3 id="endingTitle">Master of Escapes!</h3>
+              <p id="endingDesc">You dashed into the mouse hole with 3 wedges of Swiss cheese while Tom crashed into Spike's doghouse!</p>
+              <button class="action-btn" id="btnRestartGame">Play Again 🔄</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Character Files -->
+      <div class="tab-pane" id="tj-tab-3">
+        <div class="tab-action-bar">
+          <p class="tab-hint">Classified household records. Click any character to inspect personalities, weapons, and trivia.</p>
+          <button class="action-btn-sm" id="btnRandomTjChar">
+            <span>🎲</span> Random File
+          </button>
+        </div>
+
+        <div class="tj-char-grid" id="tjCharGrid">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Character Dossier Modal -->
+        <div class="interactive-modal hidden" id="tjModal">
+          <div class="modal-card">
+            <button class="modal-close-btn" id="tjModalClose">✕</button>
+            <div class="modal-header">
+              <span class="modal-avatar" id="tjModalIcon">🐱</span>
+              <div>
+                <span class="modal-tag">Household Resident File</span>
+                <h3 class="modal-title" id="tjModalName">Thomas "Tom" Cat</h3>
+              </div>
+            </div>
+            <p class="modal-desc" id="tjModalDesc"></p>
+            <div class="modal-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Personality</span>
+                <span class="meta-val" id="tjModalTrait">Tenacious & Theatrical</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Arch-Rival</span>
+                <span class="meta-val" id="tjModalRival">Jerry Mouse</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Favorite Hobby</span>
+                <span class="meta-val" id="tjModalHobby">Concert Pianist</span>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <span class="modal-fun-fact" id="tjModalFact">💡 Academy Award Fact: The Tom and Jerry series won seven Academy Awards for Best Animated Short Film!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#worlds" class="back-link">← Back to All Worlds</a>
+    </div>
+  </section>
+
+  <!-- ===== Quick Access ===== -->
+  <section class="quick-access" id="quick-access">
+    <div class="section-header">
+      <span class="section-tag">JUMP RIGHT IN</span>
+      <h2 class="section-title">Quick Access</h2>
+    </div>
+    <div class="qa-grid">
+      <a href="/game" class="qa-card qa-game">
+        <div class="qa-icon">🎮</div>
+        <h3>Play Game</h3>
+        <p>Launch the Homework 6 game experience.</p>
+        <span class="qa-arrow">→</span>
+      </a>
+      <a href="/portfolio" class="qa-card qa-portfolio">
+        <div class="qa-icon">📁</div>
+        <h3>View Portfolio</h3>
+        <p>Browse the Homework 8 portfolio showcase.</p>
+        <span class="qa-arrow">→</span>
+      </a>
+      <a href="/api#pokemon" class="qa-card qa-pokemon-api">
+        <div class="qa-icon">⚡</div>
+        <h3>Pokémon Explorer</h3>
+        <p>Live PokéAPI: search 1,000+ Pokémon & live stats.</p>
+        <span class="qa-arrow">→</span>
+      </a>
+      <a href="/api#tv" class="qa-card qa-api">
+        <div class="qa-icon">📺</div>
+        <h3>TV Universe</h3>
+        <p>Live TVmaze API: discover cartoon shows & episodes.</p>
+        <span class="qa-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon">🌀</span>
+        <span class="brand-text footer-logo">CARTOON<span class="brand-accent">VERSE</span></span>
+      </div>
+      <p class="footer-desc">A magical-futuristic portal to four legendary cartoon worlds: Doraemon, Powerpuff Girls, Pokémon, and Tom & Jerry. Built as Homework&nbsp;9 for CS&nbsp;CRP — powered by Python Flask.</p>
+      <nav class="footer-nav">
+        <a href="#hero">Home</a>
+        <a href="#worlds">Worlds</a>
+        <a href="#character-discovery">Characters</a>
+        <a href="/game">Game</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/api#pokemon">Pokémon Explorer</a>
+        <a href="/api#tv">TV Universe</a>
+      </nav>
+      <div class="footer-line"></div>
+      <p class="footer-copy">&copy; 2026 CartoonVerse &bull; All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/home/script.js"></script>
+</body>
+</html>
