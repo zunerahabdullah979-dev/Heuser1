@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiverse Explore — Pokémon & TV Universe | CartoonVerse</title>
+  <meta name="description" content="Explore live data from two free public APIs: Pokémon Explorer via PokéAPI and CartoonVerse TV Universe via TVmaze.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/api/style.css">
+</head>
+<body>
+
+  <!-- Background Decorative Multiverse Elements -->
+  <div class="stars-layer" aria-hidden="true"></div>
+  <div class="ambient-glow glow-cyan" aria-hidden="true"></div>
+  <div class="ambient-glow glow-magenta" aria-hidden="true"></div>
+
+  <!-- ── Global Navigation ─────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="brand-logo" aria-label="CartoonVerse Home">
+        <span class="brand-portal-icon">🌀</span>
+        <span class="brand-text">CARTOON<span class="accent-verse">VERSE</span></span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/game" class="nav-link">Game</a></li>
+        <li><a href="/portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#pokemon" class="nav-link nav-opt-pokemon" id="navLinkPokemon">⚡ Pokémon Explorer</a></li>
+        <li><a href="#tv" class="nav-link nav-opt-tv active" id="navLinkTv">📺 TV Universe</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero Section ──────────────────────────────────────────────── -->
+  <header class="api-hero">
+    <div class="hero-inner">
+      <div class="api-badges">
+        <span class="api-badge badge-free">⚡ Two Free Public APIs</span>
+        <span class="api-badge badge-nokey">🔑 Zero API Keys Required</span>
+        <span class="api-badge badge-live">🌐 100% Live Multiverse Data</span>
+      </div>
+
+      <h1 class="api-title">
+        MULTIVERSE <span class="highlight-text">EXPLORE HUB</span>
+      </h1>
+      <p class="api-subtitle">
+        Select between two independent live multiverse explorers: search over 1,000 live Pokémon via <strong>PokéAPI</strong>, or discover thousands of animated series, seasons, and episodes via <strong>TVmaze</strong>.
+      </p>
+
+      <!-- ── TWO PROMINENT SEPARATE EXPLORE OPTIONS ────────────────── -->
+      <div class="explorer-switcher-bar" role="tablist" aria-label="Choose Multiverse Explorer">
+        <button 
+          class="explorer-switch-btn active" 
+          id="tabBtnTv" 
+          role="tab" 
+          aria-selected="true" 
+          aria-controls="viewTvUniverse"
+          data-target="viewTvUniverse"
+        >
+          <span class="switch-icon">📺</span>
+          <div class="switch-info">
+            <span class="switch-heading">CartoonVerse TV Universe</span>
+            <span class="switch-sub">TVmaze API • Search Shows, Seasons & Episodes</span>
+          </div>
+          <span class="switch-indicator"></span>
+        </button>
+
+        <button 
+          class="explorer-switch-btn" 
+          id="tabBtnPokemon" 
+          role="tab" 
+          aria-selected="false" 
+          aria-controls="viewPokemonExplorer"
+          data-target="viewPokemonExplorer"
+        >
+          <span class="switch-icon">⚡</span>
+          <div class="switch-info">
+            <span class="switch-heading">Pokémon Explorer</span>
+            <span class="switch-sub">PokéAPI • Live 1,025+ Pokémon, Stats & Artwork</span>
+          </div>
+          <span class="switch-indicator"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ── Main Content Container ────────────────────────────────────── -->
+  <main class="main-container">
+
+    <!-- ===============================================================
+         EXPLORE OPTION 1: POKÉMON EXPLORER (PokéAPI Integration)
+         =============================================================== -->
+    <section class="explorer-view hidden" id="viewPokemonExplorer" role="tabpanel" aria-labelledby="tabBtnPokemon">
+      <div class="poke-explorer-card">
+        <!-- Pokémon Explorer Header -->
+        <div class="poke-header-banner">
+          <div class="poke-header-badge">⚡ POWERED BY POKÉAPI.CO</div>
+          <h2 class="poke-view-title">POKÉMON LIVE DATA EXPLORER</h2>
+          <p class="poke-view-subtitle">
+            Search 1,025+ Pokémon from the global PokéAPI network with official high-res artwork, base stats, typing badges, height, weight, and abilities.
+          </p>
+        </div>
+
+        <!-- Pokémon Search Controls -->
+        <div class="poke-search-panel">
+          <div class="poke-search-row">
+            <div class="search-input-wrapper">
+              <span class="search-input-icon">🔍</span>
+              <input 
+                type="text" 
+                id="pokeSearchInput" 
+                class="poke-search-input" 
+                placeholder="Enter Pokémon name or ID (e.g. pikachu, charizard, lucario, gengar, 150)..."
+                aria-label="Search Pokémon by name or ID"
+                autocomplete="off"
+              >
+              <button class="clear-search-btn hidden" id="btnClearPokeSearch" aria-label="Clear input">✕</button>
+            </div>
+            <button class="poke-search-btn" id="btnSubmitPokeSearch">Search Pokémon</button>
+            <button class="poke-random-btn" id="btnRandomPoke">
+              <span>🎲</span> Random Pokémon
+            </button>
+          </div>
+
+          <!-- Quick Pokémon Suggestions -->
+          <div class="quick-poke-pills">
+            <span class="quick-poke-label">Quick Picks:</span>
+            <button class="poke-pill-btn" data-pokemon="pikachu">Pikachu (#25)</button>
+            <button class="poke-pill-btn" data-pokemon="charizard">Charizard (#6)</button>
+            <button class="poke-pill-btn" data-pokemon="lucario">Lucario (#448)</button>
+            <button class="poke-pill-btn" data-pokemon="gengar">Gengar (#94)</button>
+            <button class="poke-pill-btn" data-pokemon="mewtwo">Mewtwo (#150)</button>
+            <button class="poke-pill-btn" data-pokemon="eevee">Eevee (#133)</button>
+            <button class="poke-pill-btn" data-pokemon="gardevoir">Gardevoir (#282)</button>
+            <button class="poke-pill-btn" data-pokemon="rayquaza">Rayquaza (#384)</button>
+          </div>
+        </div>
+
+        <!-- Pokémon Loading State -->
+        <div class="poke-loading-state hidden" id="pokeLoadingState">
+          <div class="poke-ball-spinner"></div>
+          <p>Connecting to PokéAPI satellites...</p>
+        </div>
+
+        <!-- Pokémon Error Message -->
+        <div class="poke-error-card hidden" id="pokeErrorCard">
+          <span class="error-icon">⚠️</span>
+          <div>
+            <h4 id="pokeErrorHeading">Pokémon Not Found</h4>
+            <p id="pokeErrorDescription">Could not find that Pokémon. Please verify the spelling or ID number.</p>
+          </div>
+        </div>
+
+        <!-- Live Pokémon Display Card -->
+        <div class="poke-display-wrapper" id="pokeDisplayWrapper">
+          <div class="poke-card-grid">
+            <!-- Left Column: Artwork, ID, Name, Types -->
+            <div class="poke-art-col">
+              <div class="poke-sprite-frame">
+                <img 
+                  id="pokeLiveImg" 
+                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" 
+                  alt="Pikachu" 
+                  class="poke-artwork-img"
+                  loading="lazy"
+                >
+              </div>
+              <span class="poke-num-tag" id="pokeLiveId">#0025</span>
+              <h3 class="poke-live-name" id="pokeLiveName">Pikachu</h3>
+              <div class="poke-types-container" id="pokeLiveTypes">
+                <span class="poke-type-badge type-electric">Electric</span>
+              </div>
+            </div>
+
+            <!-- Right Column: Meta Info & Base Stats Meters -->
+            <div class="poke-stats-col">
+              <div class="poke-meta-stats">
+                <div class="meta-stat-box">
+                  <span class="ms-label">Height</span>
+                  <span class="ms-value" id="pokeLiveHeight">0.4 m</span>
+                </div>
+                <div class="meta-stat-box">
+                  <span class="ms-label">Weight</span>
+                  <span class="ms-value" id="pokeLiveWeight">6.0 kg</span>
+                </div>
+                <div class="meta-stat-box">
+                  <span class="ms-label">Abilities</span>
+                  <span class="ms-value" id="pokeLiveAbilities">Static, Lightning Rod</span>
+                </div>
+              </div>
+
+              <!-- Base Stats Progress Bars -->
+              <h4 class="poke-base-stats-title">Base Stats</h4>
+              <div class="poke-stats-list">
+                <div class="stat-row">
+                  <span class="stat-name">HP</span>
+                  <span class="stat-val" id="pokeStatHp">35</span>
+                  <div class="stat-track"><div class="stat-bar" id="barHp" style="width: 14%;"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-name">Attack</span>
+                  <span class="stat-val" id="pokeStatAtk">55</span>
+                  <div class="stat-track"><div class="stat-bar" id="barAtk" style="width: 22%;"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-name">Defense</span>
+                  <span class="stat-val" id="pokeStatDef">40</span>
+                  <div class="stat-track"><div class="stat-bar" id="barDef" style="width: 16%;"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-name">Sp. Atk</span>
+                  <span class="stat-val" id="pokeStatSpAtk">50</span>
+                  <div class="stat-track"><div class="stat-bar" id="barSpAtk" style="width: 20%;"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-name">Sp. Def</span>
+                  <span class="stat-val" id="pokeStatSpDef">50</span>
+                  <div class="stat-track"><div class="stat-bar" id="barSpDef" style="width: 20%;"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-name">Speed</span>
+                  <span class="stat-val" id="pokeStatSpd">90</span>
+                  <div class="stat-track"><div class="stat-bar" id="barSpd" style="width: 36%;"></div></div>
+                </div>
+              </div>
+
+              <!-- Cross-link back to Homepage Pokémon Section -->
+              <div class="poke-cross-links">
+                <a href="/#world-pokemon-detail" class="btn-jump-home-section">
+                  <span>🎯</span> View in Pokémon World Section (Homepage) →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         EXPLORE OPTION 2: CARTOONVERSE TV UNIVERSE (TVmaze API Integration)
+         =============================================================== -->
+    <section class="explorer-view" id="viewTvUniverse" role="tabpanel" aria-labelledby="tabBtnTv">
+      
+      <!-- Controls Panel -->
+      <div class="controls-panel">
+        <!-- Search Input Bar -->
+        <div class="search-form-row">
+          <div class="search-input-wrapper">
+            <span class="search-input-icon">🔍</span>
+            <input 
+              type="text" 
+              id="tvSearchInput" 
+              class="tv-search-input" 
+              placeholder="Search cartoon shows (e.g. Doraemon, Powerpuff Girls, Pokémon, Tom and Jerry, Avatar)..."
+              aria-label="Search TV shows by name"
+              autocomplete="off"
+            >
+            <button class="clear-search-btn hidden" id="btnClearSearch" aria-label="Clear search input">✕</button>
+          </div>
+          <button class="search-submit-btn" id="btnSubmitSearch">Search</button>
+          <button class="surprise-btn" id="btnSurpriseMe" title="Discover a surprise random cartoon show!">
+            <span>🎲</span> Surprise Me!
+          </button>
+        </div>
+
+        <!-- Quick Suggestion Pills -->
+        <div class="quick-tags-row">
+          <span class="tags-label">Quick Cartoons:</span>
+          <div class="tag-pills" id="quickTags">
+            <button class="tag-pill" data-query="doraemon">Doraemon</button>
+            <button class="tag-pill" data-query="powerpuff girls">Powerpuff Girls</button>
+            <button class="tag-pill" data-query="pokemon">Pokémon</button>
+            <button class="tag-pill" data-query="tom and jerry">Tom & Jerry</button>
+            <button class="tag-pill" data-query="avatar the last airbender">Avatar</button>
+            <button class="tag-pill" data-query="scooby-doo">Scooby-Doo</button>
+            <button class="tag-pill" data-query="batman the animated series">Batman</button>
+            <button class="tag-pill" data-query="ben 10">Ben 10</button>
+            <button class="tag-pill" data-query="spongebob">SpongeBob</button>
+          </div>
+        </div>
+
+        <!-- Genre Filter Pills -->
+        <div class="genre-filter-row">
+          <span class="genre-label">Filter Genre:</span>
+          <div class="genre-pills" id="genrePills">
+            <button class="genre-pill active" data-genre="all">All Genres</button>
+            <button class="genre-pill" data-genre="Animation">Animation</button>
+            <button class="genre-pill" data-genre="Comedy">Comedy</button>
+            <button class="genre-pill" data-genre="Action">Action</button>
+            <button class="genre-pill" data-genre="Adventure">Adventure</button>
+            <button class="genre-pill" data-genre="Anime">Anime</button>
+            <button class="genre-pill" data-genre="Fantasy">Fantasy</button>
+            <button class="genre-pill" data-genre="Family">Family</button>
+            <button class="genre-pill" data-genre="Science-Fiction">Sci-Fi</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Meta Bar -->
+      <div class="results-meta-bar" id="resultsMeta">
+        <div class="meta-count" id="resultsCount">Loading cartoon universe...</div>
+        <div class="meta-status" id="metaStatus">TVmaze API Online</div>
+      </div>
+
+      <!-- Loading Indicator -->
+      <div class="loading-state hidden" id="loadingState">
+        <div class="spinner-portal"></div>
+        <p class="loading-text">Tuning into TVmaze cartoon multiverse transmissions...</p>
+      </div>
+
+      <!-- Error Banner -->
+      <div class="error-banner hidden" id="errorBanner">
+        <span class="error-icon">⚠️</span>
+        <div class="error-content">
+          <h3 class="error-title" id="errorTitle">Transmission Glitch</h3>
+          <p class="error-msg" id="errorMsg">Could not connect to TVmaze. Please check your connection or try again.</p>
+        </div>
+        <button class="btn-retry" id="btnRetry">Try Again</button>
+      </div>
+
+      <!-- Rate Limit Alert (HTTP 429) -->
+      <div class="rate-limit-alert hidden" id="rateLimitAlert">
+        <span class="rl-icon">⏳</span>
+        <div>
+          <strong>Rate Limit Reached (HTTP 429):</strong>
+          <span>TVmaze asks visitors to pause momentarily. Retrying automatically in a few seconds...</span>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">📺</div>
+        <h3>No Cartoons Found</h3>
+        <p id="emptyMsg">No shows matched your query or filter. Try searching for a different cartoon title or pick a quick tag!</p>
+        <button class="action-btn-sm" id="btnResetEmpty">Reset Search</button>
+      </div>
+
+      <!-- Shows Grid (Cartoon Discovery Hub) -->
+      <section class="shows-grid" id="showsGrid" aria-label="TV shows discovery grid">
+        <!-- Populated dynamically via script.js -->
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- ── Feature 2: Episode Explorer Modal / View ──────────────────── -->
+  <div class="modal-overlay hidden" id="episodeModal" role="dialog" aria-modal="true" aria-labelledby="modalShowTitle">
+    <div class="modal-container">
+      <button class="modal-close" id="btnModalClose" aria-label="Close episode explorer">✕</button>
+
+      <!-- Show Header Banner -->
+      <div class="modal-show-header" id="modalShowHeader">
+        <div class="modal-poster-wrap">
+          <img src="" alt="" class="modal-poster-img" id="modalPoster">
+          <div class="modal-rating-badge" id="modalRating">⭐ 8.5</div>
+        </div>
+
+        <div class="modal-header-info">
+          <div class="modal-badges-row" id="modalBadgesRow">
+            <span class="modal-badge-status" id="modalStatus">Running</span>
+            <span class="modal-badge-network" id="modalNetwork">TV Asahi</span>
+            <span class="modal-badge-year" id="modalYear">2005</span>
+          </div>
+
+          <h2 class="modal-show-title" id="modalShowTitle">Show Title</h2>
+          <div class="modal-genres" id="modalGenres">
+            <!-- Badges -->
+          </div>
+
+          <p class="modal-synopsis" id="modalSynopsis">
+            Show synopsis description goes here...
+          </p>
+
+          <div class="modal-links-row">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="modal-ext-link" id="modalTvmazeLink">
+              View on TVmaze ↗
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="modal-ext-link hidden" id="modalOfficialLink">
+              Official Website ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode Explorer Section -->
+      <div class="episodes-section">
+        <div class="episodes-header">
+          <div class="episodes-title-row">
+            <span class="ep-icon">🎬</span>
+            <h3>Episode Explorer</h3>
+            <span class="episodes-total-count" id="episodesTotalCount">(0 episodes)</span>
+          </div>
+
+          <!-- Season Selector -->
+          <div class="season-filter-wrapper">
+            <label for="seasonSelect">Season:</label>
+            <select id="seasonSelect" class="season-select" aria-label="Filter episodes by season">
+              <option value="all">All Seasons</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Episodes Loading State -->
+        <div class="episodes-loading hidden" id="episodesLoading">
+          <div class="spinner-sm"></div>
+          <span>Fetching season & episode guide...</span>
+        </div>
+
+        <!-- Episodes Grid -->
+        <div class="episodes-grid" id="episodesGrid">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Episodes Empty State -->
+        <div class="episodes-empty hidden" id="episodesEmpty">
+          <p>No detailed episode guide available for this show in the TVmaze database.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Feature 3: Surprise Me Spotlight Modal ────────────────────── -->
+  <div class="modal-overlay hidden" id="surpriseModal" role="dialog" aria-modal="true" aria-labelledby="surpriseTitle">
+    <div class="surprise-modal-container">
+      <button class="modal-close" id="btnSurpriseClose" aria-label="Close surprise card">✕</button>
+
+      <div class="surprise-badge-top">✨ MULTIVERSE SURPRISE PICK ✨</div>
+
+      <div class="surprise-card-body">
+        <div class="surprise-poster-wrap">
+          <img src="" alt="" class="surprise-poster-img" id="surprisePoster">
+          <span class="surprise-rating" id="surpriseRating">⭐ 8.0</span>
+        </div>
+
+        <div class="surprise-details">
+          <h2 class="surprise-title" id="surpriseTitle">Surprise Cartoon</h2>
+          <div class="surprise-genres" id="surpriseGenres"></div>
+
+          <div class="surprise-meta">
+            <span id="surpriseType">Animation</span> •
+            <span id="surpriseYear">2010</span> •
+            <span id="surpriseStatus">Ended</span>
+          </div>
+
+          <p class="surprise-desc" id="surpriseDesc">
+            Surprise summary goes here.
+          </p>
+
+          <div class="surprise-actions">
+            <button class="surprise-explore-btn" id="btnSurpriseExplore">
+              <span>🎬</span> View Episodes & Seasons
+            </button>
+            <button class="surprise-again-btn" id="btnSurpriseAgain">
+              <span>🎲</span> Roll Another!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TVmaze Attribution & Footer ───────────────────────────────── -->
+  <footer class="api-footer">
+    <div class="footer-inner">
+      <div class="footer-attribution">
+        <span class="footer-tv-icon">📺</span>
+        <div>
+          <h4>Independent Public API Integrations</h4>
+          <p>
+            • <strong>PokéAPI</strong>: Community-powered Pokémon RESTful API (<a href="https://pokeapi.co" target="_blank" rel="noopener noreferrer">pokeapi.co</a>).<br>
+            • <strong>TVmaze</strong>: Community-driven television database (<a href="https://www.tvmaze.com" target="_blank" rel="noopener noreferrer">tvmaze.com</a>) licensed under CC BY-SA.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-links-row">
+        <a href="/">CartoonVerse Home</a>
+        <a href="/#world-pokemon-detail">Pokémon World Section</a>
+        <a href="/game">Homework 6 Game</a>
+        <a href="/portfolio">Homework 8 Portfolio</a>
+        <a href="https://pokeapi.co/docs/v2" target="_blank" rel="noopener noreferrer">PokéAPI Docs</a>
+        <a href="https://api.tvmaze.com" target="_blank" rel="noopener noreferrer">TVmaze API Docs</a>
+      </div>
+
+      <p class="footer-copy">© 2026 CartoonVerse • Multiverse API Explorer</p>
+    </div>
+  </footer>
+
+  <script src="/api/script.js"></script>
+</body>
+</html>
